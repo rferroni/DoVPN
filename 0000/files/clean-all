@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# Initialize the $KEY_DIR directory.
+# Note that this script does a
+# rm -rf on $KEY_DIR so be careful!
+export RM="/bin/rm"
+export MKDIR="/bin/mkdir"
+export CHMOD="/bin/chmod"
+export TOUCH="/bin/touch"
+
+if [ "$KEY_DIR" ]; then
+    $RM -rf "$KEY_DIR"
+    $MKDIR "$KEY_DIR" && \
+        $CHMOD go-rwx "$KEY_DIR" && \
+        $TOUCH "$KEY_DIR/index.txt" && \
+        echo 01 >"$KEY_DIR/serial"
+else
+    echo 'Please source the vars script first (i.e. "source ./vars")'
+    echo 'Make sure you have edited it to reflect your configuration.'
+fi
