@@ -3,7 +3,7 @@ DoVPN = Docker + OpenVPN
 
 # Idea
 
-I create this new Docker with the idea to be completely integrated the OpenVPN service with the creation of the certificates and configurations files used by the server and the client.
+I create this new Docker with the idea to be completely integrated and automated the OpenVPN service with the creation of the certificates and configurations files used by the server and the client.
 
 The base is a Debian image (Jessie) with the OpenVPN, Easy-RSA and Iptables packages installed.
 
@@ -108,6 +108,8 @@ fi
 - Then it create the new instance of the docker using de command "docker run". Among the options we declare two environment variables that will be used to create eh configuration file server.conf for the OpenVPN server. PORT and REMOTE (this last one it have to be your Public IP Address or your Domain).
 
 - The "docker exec" is very important, because it will execute inside the Docker an script that will create all the certificates: CA, Server and Client Cert and Keys, DH. And the two OpenVPN configurations files (server.conf and client.ovpn).
+
+- You need to copy the client.ovpn file to your device (mobile, laptop, etc) where you will import this as a profile in the OpenVPN Connect application.
 
 #### The "initialize.sh" script:
 
