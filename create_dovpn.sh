@@ -14,7 +14,7 @@ if [[ $# -eq 0 ]]
 	then 
 	     	echo $1
 		# create directory for the new instance
-		cp -R $HOME/DoVPN/0000/ $HOME/$1
+		cp -R $HOME/DoVPN/0000/ $HOME/DoVPN/$1
 
 		# create new instance of dovpn
 		docker run -ti -d -P --privileged --name dovpn$1 -e PORT="port ${1}" -e REMOTE="remote dovpn.ml ${1}" -p $1:$1/udp --net=bridge -v $HOME/DoVPN/$1:/etc/openvpn:rw rferroni/dovpn /bin/bash
