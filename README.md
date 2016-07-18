@@ -10,12 +10,13 @@ The base docker image is a Debian (Jessie) with the OpenVPN, Easy-RSA and Iptabl
 
 
 # Step by Step 
-All it can be done with this 4 lines:
+All it can be done with this 5 lines:
 
 * docker pull rferroni/dovpn
 * cd && git clone https://github.com/rferroni/DoVPN.git && cd DoVPN/
 * chmod +x create_dovpn.sh && chmod +x 0000/initialize.sh
-* ./create_dovpn.sh 1194
+* vi create_dovpn.sh (change $REMOTE variable with your public IP or DNS)
+* ./create_dovpn.sh 1194 
 
 
 # Let´s explain in detail
