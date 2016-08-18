@@ -5,6 +5,7 @@ DoVPN = Docker + OpenVPN. Easy to create, use and destroy it!
 
 I create this new Docker with the idea to be completely integrated and automated the OpenVPN service with the creation of the certificates and configurations files used by the server and the client. I only used DigitalOcean to host a Linux Ubuntu server.
 The base docker image is a Debian (Jessie) with the OpenVPN, Easy-RSA and Iptables packages installed.
+I used a Droplet of [Digital Ocean 5$/mo node](https://m.do.co/c/4a09524910fb) to host the server.
 
 #### Service Online: still in progress --> https://dovpn.ml
 
